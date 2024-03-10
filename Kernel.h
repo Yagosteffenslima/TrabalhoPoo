@@ -8,7 +8,7 @@
 #include "Evento.h"
 
 // Definição da classe Processo
-class Processo {
+class Processo : public Evento {
     private:
     int ram;
 public:
