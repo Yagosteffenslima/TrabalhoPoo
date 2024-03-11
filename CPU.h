@@ -1,6 +1,8 @@
 #ifndef CPU_H
 #define CPU_H
+
 #include "RelogioGlobal.h"
+#include "Evento.h" 
 
 class CPU {
 private:
@@ -23,8 +25,11 @@ public:
 
     void setVelQuantumCPU(int velQuantumCPU);
 
-    // função para atualizar o tempo atual
+    // Função para atualizar o tempo atual
     void attTempo(bool ocioso);
+
+    // Método para processar um evento
+    void processarEvento(Evento* evento);
 };
 
 #endif
