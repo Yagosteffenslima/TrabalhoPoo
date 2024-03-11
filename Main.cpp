@@ -9,36 +9,7 @@
 #include "Kernel.h"
 #include "CPU.h"
 
-// Classe Processo para representar um processo
-class Processo {
-public:
-    Processo(int timestamp, int prioridade, int mi, int ram, double ioRate)
-        : timestamp(timestamp), prioridade(prioridade), mi(mi), ram(ram), ioRate(ioRate) {}
 
-    int getTimestamp() const { return timestamp; }
-    int getPrioridade() const { return prioridade; }
-    int getMi() const { return mi; }
-    int getRam() const { return ram; }
-    double getIoRate() const { return ioRate; }
-
-private:
-    int timestamp;
-    int prioridade;
-    int mi;
-    int ram;
-    double ioRate;
-};
-
-
-
-private:
-    std::priority_queue<Processo>& filaEventos;
-    RelogioGlobal& relGlobal;
-    int numeroCPUs;
-    std::vector<CPU>& cpus;
-};
-
-// Função para ler o arquivo CSV e criar a fila de eventos
 std::priority_queue<Processo> lerArquivoCSV(const std::string& arquivoCSV) {
     std::priority_queue<Processo> filaEventos;
 
