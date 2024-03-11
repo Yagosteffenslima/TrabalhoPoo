@@ -4,6 +4,10 @@
 #include <string>
 #include <queue>
 #include <vector>
+#include "RelogioGlobal.h"
+#include "Evento.h"
+#include "Kernel.h"
+#include "CPU.h"
 
 // Classe Processo para representar um processo
 class Processo {
@@ -25,34 +29,7 @@ private:
     double ioRate;
 };
 
-// Classe RelogioGlobal para representar o relógio global
-class RelogioGlobal {
-public:
-    // Implemente os métodos necessários conforme a necessidade do sistema
-};
 
-// Classe CPU para representar uma CPU
-class CPU {
-public:
-    CPU(int velocidade, RelogioGlobal& relGlobal)
-        : velocidade(velocidade), relGlobal(relGlobal) {}
-
-    // Implemente os métodos necessários conforme a necessidade do sistema
-
-private:
-    int velocidade;
-    RelogioGlobal& relGlobal;
-};
-
-// Classe Kernel para representar o kernel do sistema
-class Kernel {
-public:
-    Kernel(std::priority_queue<Processo>& filaEventos, RelogioGlobal& relGlobal, int numeroCPUs, std::vector<CPU>& cpus)
-        : filaEventos(filaEventos), relGlobal(relGlobal), numeroCPUs(numeroCPUs), cpus(cpus) {}
-
-    void run() {
-        // Implemente a lógica de execução do kernel conforme necessário
-    }
 
 private:
     std::priority_queue<Processo>& filaEventos;
